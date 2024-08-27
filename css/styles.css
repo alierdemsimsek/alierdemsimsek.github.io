@@ -10961,11 +10961,22 @@ header.masthead h1, header.masthead .h1 {
 #portfolio .container-fluid, #portfolio .container-sm, #portfolio .container-md, #portfolio .container-lg, #portfolio .container-xl, #portfolio .container-xxl {
   max-width: 1920px;
 }
-#portfolio .container-fluid .portfolio-box, #portfolio .container-sm .portfolio-box, #portfolio .container-md .portfolio-box, #portfolio .container-lg .portfolio-box, #portfolio .container-xl .portfolio-box, #portfolio .container-xxl .portfolio-box {
+#portfolio .container-fluid .portfolio-box, 
+#portfolio .container-sm .portfolio-box, 
+#portfolio .container-md .portfolio-box, 
+#portfolio .container-lg .portfolio-box, 
+#portfolio .container-xl .portfolio-box, 
+#portfolio .container-xxl .portfolio-box {
   position: relative;
   display: block;
 }
-#portfolio .container-fluid .portfolio-box .portfolio-box-caption, #portfolio .container-sm .portfolio-box .portfolio-box-caption, #portfolio .container-md .portfolio-box .portfolio-box-caption, #portfolio .container-lg .portfolio-box .portfolio-box-caption, #portfolio .container-xl .portfolio-box .portfolio-box-caption, #portfolio .container-xxl .portfolio-box .portfolio-box-caption {
+
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption, 
+#portfolio .container-sm .portfolio-box .portfolio-box-caption, 
+#portfolio .container-md .portfolio-box .portfolio-box-caption, 
+#portfolio .container-lg .portfolio-box .portfolio-box-caption, 
+#portfolio .container-xl .portfolio-box .portfolio-box-caption, 
+#portfolio .container-xxl .portfolio-box .portfolio-box-caption {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10980,16 +10991,82 @@ header.masthead h1, header.masthead .h1 {
   background: rgba(244, 98, 58, 0.9);
   transition: opacity 0.25s ease;
   text-align: center;
+  z-index: 1;
 }
-#portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-sm .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-md .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-lg .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-xl .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-xxl .portfolio-box .portfolio-box-caption .project-category {
+
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-category, 
+#portfolio .container-sm .portfolio-box .portfolio-box-caption .project-category, 
+#portfolio .container-md .portfolio-box .portfolio-box-caption .project-category, 
+#portfolio .container-lg .portfolio-box .portfolio-box-caption .project-category, 
+#portfolio .container-xl .portfolio-box .portfolio-box-caption .project-category, 
+#portfolio .container-xxl .portfolio-box .portfolio-box-caption .project-category {
   font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
 }
-#portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-sm .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-md .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-lg .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-xl .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-xxl .portfolio-box .portfolio-box-caption .project-name {
+
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-name, 
+#portfolio .container-sm .portfolio-box .portfolio-box-caption .project-name, 
+#portfolio .container-md .portfolio-box .portfolio-box-caption .project-name, 
+#portfolio .container-lg .portfolio-box .portfolio-box-caption .project-name, 
+#portfolio .container-xl .portfolio-box .portfolio-box-caption .project-name, 
+#portfolio .container-xxl .portfolio-box .portfolio-box-caption .project-name {
   font-size: 1.2rem;
 }
-#portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption, #portfolio .container-sm .portfolio-box:hover .portfolio-box-caption, #portfolio .container-md .portfolio-box:hover .portfolio-box-caption, #portfolio .container-lg .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xl .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
+
+#portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption, 
+#portfolio .container-sm .portfolio-box:hover .portfolio-box-caption, 
+#portfolio .container-md .portfolio-box:hover .portfolio-box-caption, 
+#portfolio .container-lg .portfolio-box:hover .portfolio-box-caption, 
+#portfolio .container-xl .portfolio-box:hover .portfolio-box-caption, 
+#portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
+}
+.project-item {
+  position: relative;
+  display: block;
+  overflow: hidden; /* Yüksekliği ve genişliği aşan içerikleri gizle */
+}
+
+.project-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  opacity: 0; /* Başlangıçta görünmez */
+  color: #fff;
+  background: rgba(244, 98, 58, 0.9); /* Daha koyu ve sade arka plan */
+  transition: opacity 0.25s ease;
+  padding: 20px; /* İçerik için biraz boşluk */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Hafif gölge */
+}
+
+.project-item:hover .project-info {
+  opacity: 1; /* Hover durumunda görünür */
+}
+
+.project-info .project-category,
+.project-info .project-name {
+  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #fff; /* Yazı rengi beyaz */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Yazıya hafif gölge */
+  margin: 0; /* Kenar boşluklarını sıfırla */
+}
+
+.project-category {
+  font-size: 0.9rem; /* Kategori için biraz daha küçük font boyutu */
+  font-weight: 600; /* Kalın yazı tipi */
+  text-transform: uppercase; /* Büyük harf yap */
+  margin-bottom: 10px; /* Kategori ve isim arasına boşluk ekle */
+}
+
+.project-name {
+  font-size: 1.2rem; /* Proje adı için daha büyük font boyutu */
+  font-weight: 700; /* Daha belirgin yazı tipi */
 }
