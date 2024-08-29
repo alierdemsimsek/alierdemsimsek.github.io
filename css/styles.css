@@ -11023,10 +11023,13 @@ header.masthead h1, header.masthead .h1 {
 #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
 }
+
 .project-item {
   position: relative;
-  display: block;
-  overflow: hidden; /* Yüksekliği ve genişliği aşan içerikleri gizle */
+  display: inline-flex;
+  width:auto;
+  height: 500px;
+  margin:10px;
 }
 
 .project-info {
