@@ -11059,9 +11059,17 @@ header.masthead h1, header.masthead .h1 {
   font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #fff; /* Yazı rengi beyaz */
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Yazıya hafif gölge */
-  margin: 0; /* Kenar boşluklarını sıfırla */
+  margin: 5px; /* Kenar boşluklarını sıfırla */
 }
-
+.project-ctp
+{
+  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.3rem;
+  font-weight: 600; /* Kalın yazı tipi */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Yazıya hafif gölge */
+  text-transform: uppercase; /* Büyük harf yap */
+  margin-bottom: 10px; /* Kategori ve isim arasına boşluk ekle */
+}
 .project-category {
   font-size: 0.9rem; /* Kategori için biraz daha küçük font boyutu */
   font-weight: 600; /* Kalın yazı tipi */
