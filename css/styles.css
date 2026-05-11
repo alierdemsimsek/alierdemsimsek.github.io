@@ -9,27 +9,41 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Root Variables - Renkleri tek bir yerden yönetmek profesyonel bir yaklaşımdır */
+:root {
+    --bg-main: #0d1117;
+    --bg-secondary: #161b22;
+    --accent-color: #58a6ff; /* Neon Blue */
+    --success-color: #238636;
+    --text-primary: #f0f0f0;
+    --text-secondary: #8b949e;
+    --glass-bg: rgba(22, 27, 34, 0.8);
+}
+
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    background-color: #0d1117;
-    color: #f0f0f0;
-    margin: 0;
-    padding: 0;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
 }
 
-/* Container: içeriklerin maksimum genişliği ve ortalanması */
+/* Container */
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto; /* Burada ortalama sağlanıyor */
+    margin: 0 auto;
 }
 
-/* Navbar */
+/* Navbar - Glassmorphism Uygulandı */
 .navbar {
-    background-color: #161b22;
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(10px); /* Arkayı bulanıklaştırır */
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid #30363d;
     padding: 1rem 0;
+    position: sticky; /* Sayfa kaydıkça tepede kalır */
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar .container {
@@ -41,7 +55,10 @@ body {
 .navbar .logo {
     font-size: 1.5rem;
     font-weight: 800;
-    color: #f0f0f0;
+    letter-spacing: -1px; /* Daha modern bir görünüm */
+    background: linear-gradient(45deg, #58a6ff, #2ea043); /* Logo için gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-links {
@@ -52,176 +69,190 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: #f0f0f0;
+    color: var(--text-secondary);
     font-weight: 600;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #58a6ff;
+    color: var(--accent-color);
 }
 
-/* Ortalanmış metinler için genel sınıf */
-.text-center {
-    text-align: center;
-}
-
-/* Hero */
+/* Hero Section - Daha Dinamik Geçiş */
 .hero {
-    background: linear-gradient(to right, #0d1117, #161b22);
-    color: #f0f0f0;
-    padding: 100px 0;
-}
-
-.hero .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    background: radial-gradient(circle at top right, #161b22, #0d1117); /* Düz gradient yerine dairesel */
+    padding: 150px 0; /* Boşluğu artırarak daha heybetli yaptık */
 }
 
 .hero h2 {
-    font-size: 2.5rem;
+    font-size: 3.5rem; /* Başlığı büyüttük */
     margin-bottom: 1rem;
+    font-weight: 900;
 }
 
 .hero p {
-    max-width: 600px;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 700px;
 }
 
+/* Modern Buton Tasarımı */
 .btn {
-    margin-top: 1.5rem;
-    padding: 0.75rem 1.5rem;
-    background-color: #238636;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background-color: var(--success-color);
     color: white;
     text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-    display: inline-block;
+    border-radius: 50px; /* Tam yuvarlak köşeler */
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(35, 134, 54, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Daha doğal bir ivme */
 }
 
 .btn:hover {
     background-color: #2ea043;
+    transform: translateY(-3px); /* Yukarı zıplama efekti */
+    box-shadow: 0 6px 20px rgba(35, 134, 54, 0.4);
 }
 
-/* Sections (About, Contact, etc) */
-.section {
-    padding: 80px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-/* Portfolio */
-.portfolio .container {
-    text-align: center;
-}
-
-.portfolio h2 {
-    margin-bottom: 2rem;
-}
-
+/* Portfolio Cards - Soft Shadows & Glow */
+/* Portfolio Grid & Cards */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
     margin-top: 2rem;
 }
 
+/* Tüm kart tıklanabilir, temel link stillerini kaldıralım */
 .card {
-    background-color: #161b22;
-    color: #f0f0f0;
-    border-radius: 8px;
+    display: block;
+    text-decoration: none; /* Mavi alt çizgiyi kaldırır */
+    color: inherit; /* Metin renklerini miras almasını sağlar */
+    background-color: var(--bg-secondary);
+    border-radius: 12px; /* Daha yumuşak köşeler */
     overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s ease;
+    position: relative; /* Etiket için gerekli */
+    border: 1px solid rgba(255, 255, 255, 0.03); /* Çok sönük, derinlik katan kenarlık */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Profesyonel ivme */
 }
 
+/* Hover Efektleri - 'Kutucuk' hissini kaldıran kısım */
 .card:hover {
-    transform: scale(1.02);
+    transform: translateY(-8px) scale(1.01); /* Yukarı yüksel ve çok az büyü */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Güçlü gölge */
+    border-color: var(--accent-color); /* Kenarlık vurgu rengine dönsün */
 }
 
+/* Kartın içindeki resim */
 .card img {
     width: 100%;
-    height: auto;
+    height: 180px; /* Sabit yükseklik, object-fit ile */
+    object-fit: cover;
     display: block;
+    transition: transform 0.3s ease; /* Hover'da büyümesi için */
 }
 
+/* Hover'da resmin büyümesi */
+.card:hover img {
+    transform: scale(1.05); /* Resim kartın içinde büyüsün */
+}
+
+/* Proje Etiketi (Unity / C#) */
+.card-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: var(--accent-color);
+    color: #0d1117; /* Arka plan mavi olduğu için yazı koyu olsun, okunabilirlik artar */
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Kart İçeriği (Metin Alanı) */
 .card-content {
-    padding: 1rem;
+    padding: 1.25rem;
+    text-align: left; /* Metinleri sola yaslayalım, daha profesyonel durur */
 }
 
+/* Proje Türü (Açıklama) */
 .card-content span {
-    font-size: 0.9rem;
-    color: #8b949e;
+    display: block; /* Alt alta gelsinler */
+    color: var(--text-secondary); /* Daha sönük gri */
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+    text-transform: uppercase; /* Metni büyük harfe çevirir, daha düzenli durur */
+    letter-spacing: 1px;
 }
 
+/* Proje Adı (Başlık) */
 .card-content h3 {
-    margin-top: 0.5rem;
-    font-size: 1.25rem;
+    color: var(--text-primary); /* Beyaz/açık gri */
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
 }
-
-/* Contact */
-.contact {
-    background-color: #161b22;
-    padding: 80px 0;
-    width: 100%;
-}
-
-.contact .container {
-    max-width: 1500px;
-    text-align: center;
-}
-
+/* Contact Info Divs */
+/* Contact Section Fixes */
 .contact-info {
     margin-top: 3rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
-    gap: 2rem;
-    text-align: center;
+    /* Kutuların yan yana durması için min-max dengesi */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 1.5rem;
+    justify-content: center;
 }
 
 .contact-info div {
-    background-color: #0d1117;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: var(--bg-secondary);
+    padding: 2.5rem 1.5rem;
+    border-radius: 16px;
+    border: 1px solid #30363d;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column; /* İkon ve yazıyı alt alta getirir */
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .contact-info div:hover {
-    background-color: #21262d;
-    transform: translateY(-4px);
+    background-color: #1c2128;
+    border-color: var(--accent-color);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-.contact-info i {
-    font-size: 2rem;
-    color: #58a6ff;
-    margin-bottom: 1rem;
-    display: block;
-}
-
+/* İletişim Linklerini Temizleme */
 .contact-info a {
-    text-decoration: none;
-    color: #f0f0f0;
-    font-weight: 500;
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    color: var(--text-primary); /* Mavi yerine ana metin rengini kullanır */
+    font-weight: 600;
+    font-size: 1rem;
     transition: color 0.3s ease;
+    word-break: break-all; /* Uzun mail adreslerinin mobilde taşmasını önler */
 }
 
 .contact-info a:hover {
-    color: #58a6ff;
+    color: var(--accent-color); /* Üzerine gelince vurgu rengine döner */
 }
 
-/* Footer */
-.footer {
-    background-color: #0d1117;
-    color: #8b949e;
-    font-size: 0.9rem;
-    padding: 2rem 0;
-    text-align: center;
+/* İkon Stilleri */
+.contact-info i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Telefon gibi link olmayan metinler için */
+.contact-info div {
+    color: var(--text-primary);
+    font-weight: 600;
 }

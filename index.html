@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ali Erdem Şimşek | Unity Game Developer</title>
+    <!-- Meta tags for social media previews and SEO -->
+    <meta property="og:title" content="Ali Erdem Şimşek | Software Engineer | Unity & C#">
+    <meta property="og:description" content="Portfolio of Ali Erdem Şimşek, showcasing Unity game development projects.">
+    
+    <title>Ali Erdem Şimşek |  Software Engineer | Unity & C#</title>
     <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
     <link rel="stylesheet" href="css/styles.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 </head>
 <body>
 
-    <!-- Navbar -->
+    <!-- Navbar Section -->
     <header class="navbar">
         <div class="container">
-            <h1 class="logo">Ali Erdem Şimşek</h1>
+            <a href="#" style="text-decoration: none;"><h1 class="logo">Ali Erdem Şimşek</h1></a>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -27,9 +32,15 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container text-center">
-            <h2>Unity Game Developer</h2>
+            <!-- Sub-title to highlight professional focus -->
+            <span class="sub-title" style="color: var(--accent-color); font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">Professional</span>
+            <h2> Software Engineer | Unity Game Developer</h2>
             <p>I offer tailored solutions in Unity development, from concept to final product.</p>
-            <a href="#about" class="btn">About Me</a>
+            <!-- Call to action buttons -->
+            <div class="hero-btns" style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center;">
+                <a href="#portfolio" class="btn">View My Games</a>
+                <a href="#contact" class="btn" style="background: transparent; border: 2px solid var(--success-color); color: var(--success-color);">Contact Me</a>
+            </div>
         </div>
     </section>
 
@@ -41,20 +52,60 @@
         </div>
     </section>
 
+    <!-- Skills / Technical Arsenal Section -->
+    <section class="skills section" id="skills" style="background-color: var(--bg-secondary); padding: 60px 0;">
+        <div class="container text-center">
+            <h2>Technical Arsenal</h2>
+            <!-- Grid layout for skills -->
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-top: 2rem; gap: 1rem;">
+                <div>
+                    <i class="bi bi-unity" style="font-size: 2.5rem; color: var(--accent-color);"></i>
+                    <p style="margin-top: 0.5rem; font-weight: 600;">Unity 2D/3D</p>
+                </div>
+                <div>
+                    <i class="bi bi-code-slash" style="font-size: 2.5rem; color: var(--accent-color);"></i>
+                    <p style="margin-top: 0.5rem; font-weight: 600;">C# Programming</p>
+                </div>
+                <div>
+                    <i class="bi bi-git" style="font-size: 2.5rem; color: var(--accent-color);"></i>
+                    <p style="margin-top: 0.5rem; font-weight: 600;">Version Control</p>
+                </div>
+                <div>
+                    <i class="bi bi-cpu" style="font-size: 2.5rem; color: var(--accent-color);"></i>
+                    <p style="margin-top: 0.5rem; font-weight: 600;">Optimization</p>
+                </div>
+                <div>
+                    <i class="bi bi-cpu" style="font-size: 2.5rem; color: var(--accent-color);"></i>
+                    <p style="margin-top: 0.5rem; font-weight: 600;">Object-Oriented Programming (OOP)</p>
+                </div>
+                <div>
+                    <i class="bi bi-cpu" style="font-size: 2.5rem; color: var(--accent-color);"></i>
+                    <p style="margin-top: 0.5rem; font-weight: 600;">Clean Code Principles (SOLID)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Portfolio Section -->
     <section class="portfolio section" id="portfolio">
         <div class="container">
             <h2 class="text-center">Portfolio</h2>
             <div class="grid">
-
-                <a href="https://alkurt.itch.io/revenge-of-the-fish-king" target="_blank" class="card">
+                
+                <!-- Project 1 -->
+                <a href="https://alkurt.itch.io/revenge-of-the-fish-king" target="_blank" class="card" style="position: relative;">
+                    <!-- Engine/Tech Tag -->
+                    <div class="card-tag" style="position: absolute; top: 10px; right: 10px; background: var(--accent-color); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">Unity / C#</div>
                     <img src="assets/img/portfolio/thumbnails/1.png" alt="Revenge Of The Fish King">
                     <div class="card-content">
                         <span>Top-Down Shooter</span>
                         <h3>Revenge Of The Fish King</h3>
                     </div>
                 </a>
-                <a href="https://giant-beak-games.itch.io/robosurvive" target="_blank" class="card">
+
+                <!-- Project 2 -->
+                <a href="https://giant-beak-games.itch.io/robosurvive" target="_blank" class="card" style="position: relative;">
+                    <div class="card-tag" style="position: absolute; top: 10px; right: 10px; background: var(--accent-color); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">Unity / C#</div>
                     <img src="assets/img/portfolio/thumbnails/2.gif" alt="RoboSurvive">
                     <div class="card-content">
                         <span>Rogue Lite</span>
@@ -62,7 +113,9 @@
                     </div>
                 </a>
 
-                <a href="https://giant-beak-games.itch.io/to-the-homee" target="_blank" class="card">
+                <!-- Project 3 -->
+                <a href="https://giant-beak-games.itch.io/to-the-homee" target="_blank" class="card" style="position: relative;">
+                    <div class="card-tag" style="position: absolute; top: 10px; right: 10px; background: var(--accent-color); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">Unity / C#</div>
                     <img src="assets/img/portfolio/thumbnails/3.png" alt="To The Home">
                     <div class="card-content">
                         <span>2D Platformer</span>
@@ -70,7 +123,9 @@
                     </div>
                 </a>
 
-                <a href="https://giant-beak-games.itch.io/pixel-runner" target="_blank" class="card">
+                <!-- Project 4 -->
+                <a href="https://giant-beak-games.itch.io/pixel-runner" target="_blank" class="card" style="position: relative;">
+                    <div class="card-tag" style="position: absolute; top: 10px; right: 10px; background: var(--accent-color); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">Unity / C#</div>
                     <img src="assets/img/portfolio/thumbnails/4.png" alt="PixelRunner">
                     <div class="card-content">
                         <span>Endless Runner</span>
@@ -78,35 +133,39 @@
                     </div>
                 </a>
 
-                <!-- <a href="https://lilacsweet.itch.io/astro-outlaws" target="_blank" class="card">
-                    <img src="assets/img/thumbnails/5.png" alt="Astro Outlaws">
-                    <div class="card-content">
-                        <span>3D Space Combat</span>
-                        <h3>Astro Outlaws</h3>
-                    </div>
-                </a> -->
-                <a href="https://play.google.com/store/apps/details?id=com.GiantBeakGames.NovaHunter" target="_blank" class="card">
+                <!-- Project 5 -->
+                <a href="https://giant-beak-games.itch.io/nova-hunter" target="_blank" class="card" style="position: relative;">
+                    <div class="card-tag" style="position: absolute; top: 10px; right: 10px; background: #2ea043; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">Mobile</div>
                     <img src="assets/img/portfolio/thumbnails/6.png" alt="Nova Hunter">
                     <div class="card-content">
                         <span>Arcade Space Shooter</span>
                         <h3>Nova Hunter</h3>
                     </div>
                 </a>
-                <a href="https://alkurt.itch.io/bloom-night" target="_blank" class="card">
+
+                <!-- Project 6 -->
+                <a href="https://alkurt.itch.io/bloom-night" target="_blank" class="card" style="position: relative;">
+                    <div class="card-tag" style="position: absolute; top: 10px; right: 10px; background: var(--accent-color); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">Unity / C#</div>
                     <img src="assets/img/portfolio/thumbnails/7.png" alt="Bloom Night">
                     <div class="card-content">
                         <span>2D Action / Rhythm</span>
                         <h3>Bloom Night</h3>
                     </div>
                 </a>        
-                <a href="https://giant-beak-games.itch.io/sandstorm-escape" target="_blank" class="card">
+                
+                <!-- Project 7 -->
+                <a href="https://giant-beak-games.itch.io/sandstorm-escape" target="_blank" class="card" style="position: relative;">
+                    <div class="card-tag" style="position: absolute; top: 10px; right: 10px; background: var(--accent-color); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">Unity / C#</div>
                     <img src="assets/img/portfolio/thumbnails/8.gif" alt="Sandstorm Escape">
                     <div class="card-content">
                         <span>2D Platform / Runner</span>
                         <h3>Sandstorm Escape</h3>
                     </div>
                 </a>      
-                  <a href="https://magarajam.com/game/1999763135719801856" target="_blank" class="card">
+                
+                <!-- Project 8 -->
+                <a href="https://magarajam.com/game/1999763135719801856" target="_blank" class="card" style="position: relative;">
+                    <div class="card-tag" style="position: absolute; top: 10px; right: 10px; background: var(--accent-color); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">Unity / C#</div>
                     <img src="assets/img/portfolio/thumbnails/9.png" alt="Zincir Arenası">
                     <div class="card-content">
                         <span>2.5D Action / Co-Op</span>
@@ -131,8 +190,9 @@
         </div>
     </section>
 
+    <!-- Footer Section -->
     <footer class="footer text-center">
-        <p>© 2025 Ali Erdem Şimşek. All rights reserved.</p>
+        <p>© 2026 Ali Erdem Şimşek. All rights reserved.</p>
     </footer>
 
 </body>
